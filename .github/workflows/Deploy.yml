@@ -48,4 +48,4 @@ jobs:
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: test
-          FOLDER: ./pablic
+          FOLDER: ./public
