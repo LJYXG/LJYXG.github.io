@@ -31,7 +31,8 @@ jobs:
       - name: npm install
         run: |
           npm install hexo-cli -g
-          npm install hexo-deployer-git --save 
+          npm install hexo-deployer-git --save
+          npm install --save hexo-renderer-pug 
         env:
           CI: true
       
