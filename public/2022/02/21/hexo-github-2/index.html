@@ -1,0 +1,537 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/logo.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/logo.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="最近有朋友在使用Hexo做自己博客，前几日我弄过Hexo的安装教程  恰好我也对Hexo感兴趣 便与朋友共同研究下Hexo的使用！ 由此便引出本篇文章！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo+Github Pages 实现个人博客的小白教程 ——下篇">
+<meta property="og:url" content="https://ljyxg.github.io/2022/02/21/hexo-github-2/index.html">
+<meta property="og:site_name" content="拾 · 间">
+<meta property="og:description" content="最近有朋友在使用Hexo做自己博客，前几日我弄过Hexo的安装教程  恰好我也对Hexo感兴趣 便与朋友共同研究下Hexo的使用！ 由此便引出本篇文章！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-18_18-28-15.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-18_18-38-36.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-18_19-14-17.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-18_19-16-45.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-18_19-24-18.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-18_19-35-37.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-18_19-41-54.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-18_19-58-17.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-18_19-59-47.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-18_20-17-59.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-18_20-37-20.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-18_20-55-44.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-19_18-56-36.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-19_18-58-06.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-19_18-59-23.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-19_19-01-39.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-19_19-02-51.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-19_19-08-25.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-19_19-18-08.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-19_19-22-03.png">
+<meta property="og:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-19_20-56-01.png">
+<meta property="article:published_time" content="2022-02-21T10:58:14.000Z">
+<meta property="article:modified_time" content="2022-02-21T11:27:19.175Z">
+<meta property="article:author" content="XG">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Github">
+<meta property="article:tag" content="Blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ljyxg.github.io/images/psg4/Snipaste_2022-02-18_18-28-15.png"><title>Hexo+Github Pages 实现个人博客的小白教程 ——下篇 | 拾 · 间</title><link ref="canonical" href="https://ljyxg.github.io/2022/02/21/hexo-github-2/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-user"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/friends/"><span class="header-nav-menu-item__icon"><i class="fas fa-users"></i></span><span class="header-nav-menu-item__text">友链</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-feather-alt"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">拾 · 间</div><div class="header-banner-info__subtitle">一个鸽子的巢</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Hexo+Github Pages 实现个人博客的小白教程 ——下篇</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-02-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-02-21</span></span></div></header><div class="post-body"><p>最近有朋友在使用<code>Hexo</code>做自己博客，前几日我弄过<code>Hexo</code>的安装教程 </p>
+<p>恰好我也对<code>Hexo</code>感兴趣 便与朋友共同研究下<code>Hexo</code>的使用！</p>
+<p>由此便引出本篇文章！</p>
+<span id="more"></span>
+
+<p><strong>读前注意</strong></p>
+<blockquote>
+<p>本文章并不包含<code>Hexo</code>的安装教程（请见Hexo+Github Pages 实现个人博客的小白教程 ——上篇）</p>
+<p>本人的部署平台为<code>Github</code></p>
+<p>本文章使用主题以<code>Stun</code>为主（<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/liuyib/hexo-theme-stun" >链接地址</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>） ，其他主题势必会有异同请自行辨别！</p>
+<p>本文要求您有一定的自我学习能力，毕竟这只是我的经验记录，若你怕麻烦 抱歉本文章不适合您</p>
+<p>最后温馨提示 本文完整仔细阅读可能需要20min左右，若您想实操 可能需要数小时！！！</p>
+</blockquote>
+
+        <h2 id="一、简单的站点设置"   >
+          <a href="#一、简单的站点设置" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、简单的站点设置" class="headerlink" title="一、简单的站点设置"></a>一、简单的站点设置</h2>
+      
+        <h3 id="1、站点的基本信息设置"   >
+          <a href="#1、站点的基本信息设置" class="heading-link"><i class="fas fa-link"></i></a><a href="#1、站点的基本信息设置" class="headerlink" title="1、站点的基本信息设置"></a>1、站点的基本信息设置</h3>
+      <blockquote>
+<p>tips: 切记此处均为<code>YAML</code>语法，请务必注意缩进 以及记得<code>:</code>号后面 要有一个空格跟着！！！ 举例:<code>type: git</code></p>
+</blockquote>
+<p>打开位于博客所在位置根目录下的<code>_config.yml</code>配置文件进行如下设置</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>title</code></td>
+<td align="left">网站标题</td>
+</tr>
+<tr>
+<td align="left"><code>subtitle</code></td>
+<td align="left">网站副标题</td>
+</tr>
+<tr>
+<td align="left"><code>description</code></td>
+<td align="left">网站描述</td>
+</tr>
+<tr>
+<td align="left"><code>keywords</code></td>
+<td align="left">网站的关键词。支持多个关键词。</td>
+</tr>
+<tr>
+<td align="left"><code>author</code></td>
+<td align="left">作者名字</td>
+</tr>
+<tr>
+<td align="left"><code>language</code></td>
+<td align="left">网站使用的语言。对于简体中文用户来说，使用不同的主题可能需要设置成不同的值，请参考你的主题的文档自行设置，常见的有 <code>zh-CN</code>和 <code>zh-HK</code>。</td>
+</tr>
+<tr>
+<td align="left"><code>timezone</code></td>
+<td align="left">网站时区。<code>Hexo</code> 默认使用您电脑的时区。请参考 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" >时区列表</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> 进行设置，如 <code>America/New_York</code>, <code>Japan</code>, 和 <code>UTC</code> 。一般的，对于中国大陆地区可以使用 <code>Asia/Shanghai</code>。</td>
+</tr>
+<tr>
+<td align="left"><code>email</code></td>
+<td align="left">你<code>Github</code>的邮箱</td>
+</tr>
+</tbody></table></div>
+<p>下图展示为我的配置情况！</p>
+<p><img src="/images/psg4/Snipaste_2022-02-18_18-28-15.png"></p>
+
+        <h3 id="2、站点的部署地址设置"   >
+          <a href="#2、站点的部署地址设置" class="heading-link"><i class="fas fa-link"></i></a><a href="#2、站点的部署地址设置" class="headerlink" title="2、站点的部署地址设置"></a>2、站点的部署地址设置</h3>
+      <p>然后我们配置 <code>Git</code>自动部署插件 依旧是在根目录下的<code>_config.yml</code> 一般在最后面</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>type</code></td>
+<td>此处为一条指令部署类型 一般为<code>git</code></td>
+</tr>
+<tr>
+<td><code>repo</code></td>
+<td>远程仓库的地址，鉴于本鸽子添加了我的SSH公钥至<code>Github</code>仓库 可以以使用SSH地址以使用免密登录！举个例<code>git@github.com:UserName/UserName.github.io.git</code></td>
+</tr>
+<tr>
+<td><code>branch</code></td>
+<td>分支，此处注意<code>Github</code>的默认分支不再是<code>master</code>已经改为了<code>main</code></td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>此为<code>git</code>提交到<code>Github</code>的附加信息！</td>
+</tr>
+</tbody></table></div>
+<p>一个例子</p>
+<figure class="highlight yaml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com/&#123;yourname&#125;/&#123;yourname&#125;.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">&quot;Update!!!&quot;</span></span><br></pre></td></tr></table></div></figure>
+
+
+
+<p>面也贴一张我的配置图片</p>
+<p><img src="/images/psg4/Snipaste_2022-02-18_18-38-36.png"></p>
+
+        <h2 id="二、主题设置与美化。"   >
+          <a href="#二、主题设置与美化。" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、主题设置与美化。" class="headerlink" title="二、主题设置与美化。"></a>二、主题设置与美化。</h2>
+      <p><strong>注意</strong></p>
+<blockquote>
+<p>此处再次说明 鸽子用的是<code>Stun</code>主题（<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/liuyib/hexo-theme-stun" >链接地址</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>），不同注意必有异同，请自行学习！！！</p>
+<p>不管是哪一种主题，都要认真仔细阅读，每个主题的文档！！！<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://theme-stun.github.io/docs/zh-CN/guide/quick-start.html" >此处</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>为<code>Stun</code>的文档地址</p>
+</blockquote>
+
+        <h3 id="1、安装主题"   >
+          <a href="#1、安装主题" class="heading-link"><i class="fas fa-link"></i></a><a href="#1、安装主题" class="headerlink" title="1、安装主题"></a>1、安装主题</h3>
+      <p>进入 <code>Hexo</code> 根目录，执行指令：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/liuyib/hexo-theme-stun.git themes/stun</span><br></pre></td></tr></table></div></figure>
+
+<p>该指令会将本仓库中的所有文件克隆下来，其中有很多文件仅用于项目开发，对于普通用户来说完全用不到。因此，如果你想仅克隆主题运行所必需的文件，请用下面的指令代替上面的指令：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> -b dist https://github.com/liuyib/hexo-theme-stun.git themes/stun</span><br></pre></td></tr></table></div></figure>
+<p><img src="/images/psg4/Snipaste_2022-02-18_19-14-17.png"></p>
+<p>注意：这样做不方便以后更新，请谨慎使用。</p>
+<p>安装依赖 <code>hexo-renderer-pug</code></p>
+<p>进入 <code>Hexo</code> 根目录，执行指令：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save hexo-renderer-pug</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/images/psg4/Snipaste_2022-02-18_19-16-45.png"></p>
+<p>修改 <code>Hexo</code> 根目录下的 <code>_config.yml</code> 文件：</p>
+<p><code>theme: stun</code></p>
+<p>然后，启动 <code>Hexo</code> 服务器：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo s</span><br></pre></td></tr></table></div></figure>
+
+<p>结果</p>
+<p><img src="/images/psg4/Snipaste_2022-02-18_19-24-18.png"></p>
+
+        <h3 id="2、美化主题"   >
+          <a href="#2、美化主题" class="heading-link"><i class="fas fa-link"></i></a><a href="#2、美化主题" class="headerlink" title="2、美化主题"></a>2、美化主题</h3>
+      <blockquote>
+<p>tips: 主题定义具有高度自定义化！！！</p>
+<p>主题配置文件地址为<code>/thems/stun/_config.yml</code> 注意主题的配置文件名称同站点文件名一致切记不要弄混</p>
+</blockquote>
+
+        <h4 id="2-1改动站点图标以及作者信息更改！"   >
+          <a href="#2-1改动站点图标以及作者信息更改！" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1改动站点图标以及作者信息更改！" class="headerlink" title="2.1改动站点图标以及作者信息更改！"></a>2.1改动站点图标以及作者信息更改！</h4>
+      
+        <h5 id="2-1-1站点图标的更改"   >
+          <a href="#2-1-1站点图标的更改" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-1站点图标的更改" class="headerlink" title="2.1.1站点图标的更改"></a>2.1.1站点图标的更改</h5>
+      <p>首先看主题手册的描述</p>
+<figure class="highlight yaml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/assets/favicon-16x16.png</span>                   <span class="comment"># 16x16 像素大小的图片</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/assets/favicon-32x32.png</span>                  <span class="comment"># 32x32 像素大小的图片</span></span><br><span class="line">  <span class="comment"># ! ----------------------------------------------------------------------</span></span><br><span class="line">  <span class="comment"># ! 下面的配置项默认没有启用，如果你不想麻烦，可以直接忽略。</span></span><br><span class="line">  <span class="comment"># ! 想要启用，取消注释即可，但启用前必须准备好相应的图片或配置文件。</span></span><br><span class="line">  <span class="comment"># ! ----------------------------------------------------------------------</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/assets/favicon-180x180.png</span>      <span class="comment"># 180x180 像素大小的图片</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">/assets/favicon.svg</span>                       <span class="comment"># SVG 格式的图片</span></span><br><span class="line">    <span class="comment"># 表示在 Mac OS 上的 Safari 浏览器中，固定的标签页被选中时，图标的颜色</span></span><br><span class="line">    <span class="comment"># 表示在 MacBook 上的 Touch Bar 中，图标的背景颜色</span></span><br><span class="line">    <span class="attr">color:</span> <span class="string">&quot;#54bcff&quot;</span></span><br><span class="line">  <span class="attr">msapplication:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">/assets/favicon-144x144.png</span>               <span class="comment"># 144x144 像素大小的图片</span></span><br><span class="line">    <span class="comment"># 表示在 Windows 8/10 的开始菜单中，磁贴的背景颜色</span></span><br><span class="line">    <span class="attr">color:</span> <span class="string">&quot;#54bcff&quot;</span></span><br><span class="line">    <span class="attr">config:</span> <span class="string">/browserconfig.xml</span> </span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/images/psg4/Snipaste_2022-02-18_19-35-37.png"></p>
+<p>我就偷懒了 两个都丢了同一个文件</p>
+<blockquote>
+<p>推荐的图片地址为<code>/source/images/</code></p>
+</blockquote>
+<p>我的设置</p>
+<figure class="highlight yaml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/logo.png</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/logo.png</span></span><br><span class="line">  <span class="comment"># ! --------------------------------------------------</span></span><br><span class="line">  <span class="comment"># ! If you don&#x27;t know the following, please ignore it.</span></span><br><span class="line">  <span class="comment"># ! --------------------------------------------------</span></span><br><span class="line">  <span class="comment"># apple_touch_icon: /images/icons/apple-touch-icon.png</span></span><br><span class="line">  <span class="comment"># safari_pinned_tab: /images/icons/stun-logo.svg</span></span><br><span class="line">  <span class="comment"># msapplication: /images/icons/favicon-144x144.png</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Progressive Web Apps</span></span><br><span class="line"><span class="comment"># See: https://github.com/lavas-project/hexo-pwa/</span></span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/images/psg4/Snipaste_2022-02-18_19-41-54.png"></p>
+
+        <h5 id="2-1-2作者信息更改"   >
+          <a href="#2-1-2作者信息更改" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-2作者信息更改" class="headerlink" title="2.1.2作者信息更改"></a>2.1.2作者信息更改</h5>
+      <p>首先看主题手册的描述</p>
+<figure class="highlight yaml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">author:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 侧边栏头像</span></span><br><span class="line">  <span class="attr">avatar:</span></span><br><span class="line">    <span class="comment"># 填写图片路径或链接</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://xxxxx.png</span></span><br><span class="line">    <span class="comment"># 是否显示为圆形</span></span><br><span class="line">    <span class="attr">rounded:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># 头像透明度（取值：0 ~ 1）</span></span><br><span class="line">    <span class="attr">opacity:</span> <span class="number">1</span></span><br><span class="line">    <span class="comment"># 鼠标经过时的动画，可选值：turn 或 shake</span></span><br><span class="line">    <span class="attr">animation:</span> <span class="string">turn</span></span><br><span class="line">  <span class="comment"># 格言（可以是任意一句想写的话）</span></span><br><span class="line">  <span class="attr">motto:</span> <span class="string">hello</span> <span class="string">world</span></span><br></pre></td></tr></table></div></figure>
+
+
+<p>然后是我的设置</p>
+<figure class="highlight yaml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">author:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Avatar in the site sidebar.</span></span><br><span class="line">  <span class="attr">avatar:</span></span><br><span class="line">    <span class="comment"># In theme directory (source/images): /images/avatar.png</span></span><br><span class="line">    <span class="comment"># In site directory (source/uploads): /uploads/avatar.png</span></span><br><span class="line">    <span class="comment"># You can also use a link of image.</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/images/logo.png</span></span><br><span class="line">    <span class="comment"># If true, the avatar would be displayed in a circle.</span></span><br><span class="line">    <span class="attr">rounded:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Opacity of avatar (value: 0 ~ 1)</span></span><br><span class="line">    <span class="attr">opacity:</span> <span class="number">1</span></span><br><span class="line">    <span class="comment"># Mouse hover animation</span></span><br><span class="line">    <span class="comment"># Optional values: turn | shake</span></span><br><span class="line">    <span class="attr">animation:</span> <span class="string">turn</span></span><br><span class="line">  <span class="comment"># Your favorite motto.</span></span><br><span class="line">  <span class="attr">motto:</span> <span class="string">Being</span> <span class="string">Towards</span> <span class="string">Death</span></span><br></pre></td></tr></table></div></figure>
+
+
+<p>改动完毕的效果展示（所用指令依旧是<code>hexo clean &amp;&amp; hexo s</code>）</p>
+<p><img src="/images/psg4/Snipaste_2022-02-18_19-58-17.png"></p>
+
+        <h4 id="2-2改动站点背景以及增添多个独立页面！"   >
+          <a href="#2-2改动站点背景以及增添多个独立页面！" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2改动站点背景以及增添多个独立页面！" class="headerlink" title="2.2改动站点背景以及增添多个独立页面！"></a>2.2改动站点背景以及增添多个独立页面！</h4>
+      <p>首先查看下 需求</p>
+<p><img src="/images/psg4/Snipaste_2022-02-18_19-59-47.png"></p>
+<p>其次 咱们还是看下 官方文档提供的信息 </p>
+<figure class="highlight yaml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#网站主体设置 Beta v1.7.0</span></span><br><span class="line"><span class="comment">#修改主题配置文件：</span></span><br><span class="line">  <span class="attr">bg_image:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># 填写图片路径或链接</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://xxxxx.png</span></span><br><span class="line">    <span class="comment"># 是否固定背景图片（相当于设置 CSS 属性 position: fixed）</span></span><br><span class="line">    <span class="attr">fixed:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># 是否重复显示背景图片（相当于设置 CSS 属性 background-repeat: repeat/no-repeat）</span></span><br><span class="line">    <span class="attr">repeat:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># 网站主体背景图片的遮罩效果</span></span><br><span class="line">  <span class="attr">mask:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># 透明度（取值：0 ~ 1）</span></span><br><span class="line">    <span class="attr">opacity:</span></span><br><span class="line">      <span class="comment"># 默认情况下，网站主体背景图片的透明度</span></span><br><span class="line">      <span class="attr">default:</span> <span class="number">0.1</span></span><br><span class="line">      <span class="comment"># 夜晚模式下，网站主体背景图片的透明度</span></span><br><span class="line">      <span class="attr">night_mode:</span> <span class="number">0.6</span></span><br></pre></td></tr></table></div></figure>
+
+<p>然后是我的设置， </p>
+<blockquote>
+<p>ps 文件依旧是丢在了<code>/source/images/</code></p>
+</blockquote>
+<figure class="highlight yaml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">header:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">show_on:</span></span><br><span class="line">    <span class="comment"># Whether to show on the article page.</span></span><br><span class="line">    <span class="attr">post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If you set a percentage, it will be calculated based on the height of screen (Supports all CSS units)</span></span><br><span class="line">  <span class="attr">height:</span> <span class="number">80</span><span class="string">%</span></span><br><span class="line">  <span class="comment"># Background image of site header.</span></span><br><span class="line">  <span class="attr">bg_image:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># In theme directory (source/images): /images/avatar.png</span></span><br><span class="line">    <span class="comment"># In site directory (source/uploads): /uploads/avatar.png</span></span><br><span class="line">    <span class="comment"># You can also use a link of image.</span></span><br><span class="line">    <span class="attr">url:</span></span><br><span class="line">  <span class="comment"># Mask effect of the background image.</span></span><br><span class="line">  <span class="attr">mask:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># Opacity of the mask (value: 0 ~ 1)</span></span><br><span class="line">    <span class="attr">opacity:</span> <span class="number">0.5</span></span><br><span class="line">  <span class="attr">nav:</span></span><br><span class="line">    <span class="comment"># Height of the navigation bar (Supports all CSS units)</span></span><br><span class="line">    <span class="attr">height:</span> <span class="string">50px</span></span><br><span class="line">    <span class="comment"># Background color of the navigation bar (Please use &quot;&quot; to wrap the value).</span></span><br><span class="line">    <span class="attr">bg_color:</span> <span class="string">&quot;#333&quot;</span></span><br><span class="line">  <span class="comment"># The icon that prompts the user to pull down.</span></span><br><span class="line">  <span class="attr">scroll_down_icon:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># Icon name in FontAwesome, see: https://fontawesome.com/icons</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">fas</span> <span class="string">fa-angle-down</span></span><br><span class="line">    <span class="attr">animation:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The body of site.</span></span><br><span class="line"><span class="attr">body:</span></span><br><span class="line">  <span class="comment"># Background image of site body.</span></span><br><span class="line">  <span class="attr">bg_image:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># In theme directory (source/images): /images/avatar.png</span></span><br><span class="line">    <span class="comment"># In site directory (source/uploads): /uploads/avatar.png</span></span><br><span class="line">    <span class="comment"># You can also use a link of image.</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/images/bg1.png</span></span><br><span class="line">    <span class="comment"># Whether to fixed the background image.</span></span><br><span class="line">    <span class="attr">fixed:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Whether to repeat the image as much as possible to cover the entire area.</span></span><br><span class="line">    <span class="attr">repeat:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Mask effect of the background image.</span></span><br><span class="line">  <span class="attr">mask:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># Opacity of mask (value: 0 ~ 1)</span></span><br><span class="line">    <span class="attr">opacity:</span></span><br><span class="line">      <span class="comment"># Opacity of the mask by default.</span></span><br><span class="line">      <span class="attr">default:</span> <span class="number">0.1</span></span><br><span class="line">      <span class="comment"># Opacity of the mask in night mode.</span></span><br><span class="line">      <span class="attr">night_mode:</span> <span class="number">0.6</span></span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<p>按照惯例 我们依旧是预览一下我们设置的效果！（所用指令依旧是<code>hexo clean &amp;&amp; hexo s</code>）</p>
+<p><img src="/images/psg4/Snipaste_2022-02-18_20-17-59.png"></p>
+<p>下面就是增加独立页面了 在此处 我们会增加三个独立页面，两个为存档里推荐的，还有一个是我们等下要介绍的友链</p>
+<p>下面我们贴出来 官方文档对此的介绍,大家完全可以照着去做！！</p>
+<p>在 <code>Hexo</code> 根目录下：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启用分类页，执行这条指令</span></span><br><span class="line">$ hexo new page categories</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用标签页，执行这条指令</span></span><br><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></div></figure>
+
+<p>修改 Front-Matter<br>在 <code>Hexo </code>根目录下，找到 source/categories 或 source/tags 文件夹中的 Markdown 文件，设置 <code>Front-Matter</code>：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"># 如果是分类页，设置这个</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line"></span><br><span class="line"># 如果是标签页，设置这个</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></div></figure>
+
+<p>修改主题配置文件</p>
+<p>将 categories 或 tags 对应项取消注释：</p>
+<figure class="highlight yaml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># `||` 分隔符之前是页面路径，`||` 分隔符之后是图标</span></span><br><span class="line"><span class="comment"># 用法（有图标）: `Key: /路径/ || fa(s|r|l|d|b) fa-图标名称`</span></span><br><span class="line"><span class="comment"># 用法（无图标）: `Key: /路径/`</span></span><br><span class="line"><span class="comment"># fas far fal fad fab 是 FontAwesome 5.x 中图标的前缀，你需要根据具体图标自行设置</span></span><br><span class="line"><span class="comment"># 查找图标名称，请访问：https://fontawesome.com/icons</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-folder-open</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-layer-group</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-tags</span></span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<p><strong>此处开始 就是我们要关注的 增加一个独立页面的教程</strong></p>
+<p>如果你想添加自定义页面，需要执行以下步骤：</p>
+<p>以添加友链页面为例。</p>
+<p>修改主题配置文件</p>
+<figure class="highlight yaml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#注意此处我修改了 直接将目标改成了 咱们的需求友情链接</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">friendlink:</span> <span class="string">/friendlink/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-users</span></span><br></pre></td></tr></table></div></figure>
+<p>生成页面文件</p>
+<p>在 <code>Hexo</code> 根目录下执行指令：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里的 friendlink 对应上一步你设置的路径名称</span></span><br><span class="line">$ hexo new page friendlink</span><br></pre></td></tr></table></div></figure>
+
+<p>国际化设置</p>
+<blockquote>
+<p>这个是很重要的 直接关系了 你新增的页面是否会正确显示你要表的意思</p>
+</blockquote>
+<p>找到 <code>languages</code> 目录下的语言文件，根据你网站使用的语言选择对应的语言文件，例如 <code>zh-CN.yml</code></p>
+<figure class="highlight yaml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">friendlink:</span> <span class="string">友链</span></span><br></pre></td></tr></table></div></figure>
+
+<p>接下来依旧是展示更改后的效果 指令依旧是<code>hexo clean &amp;&amp; hexo s</code></p>
+<p><img src="/images/psg4/Snipaste_2022-02-18_20-37-20.png"></p>
+
+        <h4 id="2-3设置社交链接并引入阿里的图标库！"   >
+          <a href="#2-3设置社交链接并引入阿里的图标库！" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3设置社交链接并引入阿里的图标库！" class="headerlink" title="2.3设置社交链接并引入阿里的图标库！"></a>2.3设置社交链接并引入阿里的图标库！</h4>
+      <p>社交链接 依旧首先引入主题作者的官方文档</p>
+<figure class="highlight yaml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># `||` 分隔符之前是具体链接，`||` 分隔符之后是图标。</span></span><br><span class="line"><span class="comment"># 用法（有图标）: `Key: /路径/ || fa(s|r|l|d|b) fa-图标名称`</span></span><br><span class="line"><span class="comment"># 用法（无图标）: `Key: /路径/`</span></span><br><span class="line"><span class="comment"># fas far fal fad fab 是 FontAwesome 5.x 中图标的前缀，你需要根据具体图标自行设置。</span></span><br><span class="line"><span class="comment"># 查找图标名称，请访问：https://fontawesome.com/icons</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 如果你找不到想要的图标，可以考虑用文字来代替图标显示，用法：</span></span><br><span class="line"><span class="comment"># 通过添加 `origin:` 前缀即可显示文字。例如：`origin:知` 会以 `知` 代替图标显示。</span></span><br><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">github:</span> <span class="string">https://github.com/</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-github</span></span><br><span class="line">  <span class="attr">google:</span> <span class="string">https://plus.google.com/</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-google</span></span><br><span class="line">  <span class="attr">twitter:</span> <span class="string">https://twitter.com/</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-twitter</span></span><br><span class="line">  <span class="attr">youtube:</span> <span class="string">https://youtube.com/</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-youtube</span></span><br><span class="line">  <span class="comment"># segmentfault: https://segmentfault.com/ || origin:sf</span></span><br><span class="line">  <span class="comment"># weibo: https://weibo.com/ || fab fa-weibo</span></span><br><span class="line">  <span class="comment"># zhihu: https://www.zhihu.com/ || origin:知</span></span><br><span class="line">  <span class="comment"># wechat: yournumber || fab fa-weixin</span></span><br><span class="line">  <span class="comment"># telegram: yournumber || fab fa-telegram</span></span><br><span class="line">  <span class="comment"># qq: yournumber || fab fa-qq</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 社交链接的设置</span></span><br><span class="line"><span class="attr">social_setting:</span></span><br><span class="line">  <span class="comment"># 是否启用社交链接</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 是否只显示图标</span></span><br><span class="line">  <span class="attr">icon_only:</span> <span class="literal">true</span></span><br></pre></td></tr></table></div></figure>
+
+<p>此处我们举例说明一个特殊的例子</p>
+<p>例如我们要引入哔哩哔哩的社交链接 很明显列表中并不含还有哔哩哔哩的情况 对于这种情况需要进行国际化设置。</p>
+<p>步骤如下：</p>
+<p>修改主题配置文件</p>
+<figure class="highlight yaml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">bilibili:</span> <span class="string">https://bilibili.com/</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-bilibili</span></span><br></pre></td></tr></table></div></figure>
+<blockquote>
+<p>此处留一个伏笔 哔哩哔哩的图标 我按照文档确实添加了 但是 却没起作用 他的解决方案 下面会放出 2333</p>
+</blockquote>
+<p>国际化设置</p>
+<p>找到 <code>languages</code> 目录下的语言文件，根据你网站使用的语言选择对应的语言文件，例如：</p>
+<p><code>zh-CN.yml</code>:</p>
+<figure class="highlight yaml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">bilibili:</span> <span class="string">哔哩哔哩</span></span><br></pre></td></tr></table></div></figure>
+<p>这里的国际化设置，对应于鼠标经过图标时，显示的文字。</p>
+<p>依旧是成果展示</p>
+<p><img src="/images/psg4/Snipaste_2022-02-18_20-55-44.png"></p>
+<p>下面 我们解决为什么 我们在那个网站设置了 图标 但是却没有显示的问题</p>
+<p>首先 这个主题的图标支持的是 <code>FontAwesome 5.x </code>但是 哔哩哔哩的图标在这个库里属于<code>FontAwesome 6.0</code> </p>
+<p>针对此种情况我们采用<code>MSDN</code>的想法 通过<code>CSS</code>引入阿里的<code>iconfont</code>图标库</p>
+<blockquote>
+<p>此处采用<code>DreamyTZK</code>的<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://blog.csdn.net/u012208219/article/details/106883012" >Hexo博客之优雅使用阿里iconfont图标</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>上述文章的内容乍一看并不适用于本主题，但是经过本鸽子实践，本主题是可以用的！</p>
+<p><strong>这再次说明 教程都是单一方面的极致刨析 大家需要会举一反三！！！！</strong></p>
+</blockquote>
+<p>首先建立项目 即 在 阿里的iconfont选择适合的图标 然后添加到项目 （需要登录）</p>
+<p><img src="/images/psg4/Snipaste_2022-02-19_18-56-36.png"></p>
+<p>点击右上角购物车 然后新建项目 并将选中的图标 添加至项目</p>
+<img src="/images/psg4/Snipaste_2022-02-19_18-58-06.png" style="zoom:50%;" />
+
+
+<p><img src="/images/psg4/Snipaste_2022-02-19_18-59-23.png"></p>
+<p>如果你是新建项目一般来说 会与我有些许不同 不过 只要创建好后 打开即可</p>
+<p><img src="/images/psg4/Snipaste_2022-02-19_19-01-39.png"></p>
+<p>会得到 如下的CSS文件 </p>
+<p><img src="/images/psg4/Snipaste_2022-02-19_19-02-51.png"></p>
+<p>将此CSS文件复制 等下备用！！</p>
+<p>下面我们依旧是查看一下<code>Stun</code>这个主题官方文档 是如何介绍引入自定义主题的！！</p>
+<figure class="highlight markdown"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 自定义样式 Stable v1.0.3</span></span><br><span class="line">如果你想修改主题的样式，推荐将样式代码添加到 source/css/<span class="emphasis">_custom 目录下的 index.styl 文件中。这样，当主题更新时，不会覆盖你已经修改了的样式代码。</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">当然，你也可以进行模块化分类：在该目录下新建样式文件，然后通过 @import xxx 语句在同目录下的 index.styl 文件中引入你新建的样式文件。</span></span><br></pre></td></tr></table></div></figure>
+
+<p>所以我们先打开目录 <code>themes/stun/source/css/_custom/</code></p>
+<p>并在其目录下新建<code>iconfont.styl</code></p>
+<p><img src="/images/psg4/Snipaste_2022-02-19_19-08-25.png"></p>
+<blockquote>
+<p>至于如何 新建此文件 简述说明 新建一个文本文件 <code>.txt</code> 结尾的 然后变更后缀名</p>
+<p>然后用<code>VS Code</code>(可以是其他的编辑器)打开此文件 写入网页上的CSS文件</p>
+</blockquote>
+<p>然后打开上图同目录下的 <code>index.styl</code> 并在其结尾 写入如下内容</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import &#x27;./iconfont.styl&#x27;</span><br></pre></td></tr></table></div></figure>
+
+<p>好了至此已经是成功引入了 阿里的<code>iconfont</code>图标 </p>
+<blockquote>
+<p>tips: 这个引入的CSS只有你在官网添加的图标 如果新增了图标 就要更新代码 并用新的CSS代码 替代 <code>iconfont.styl</code> 里旧的CSS代码！！！</p>
+</blockquote>
+<p>回到阿里的<code>iconfont</code>图标网站 我们要获取我们新增的图标的代码 </p>
+<p><img src="/images/psg4/Snipaste_2022-02-19_19-18-08.png"></p>
+<p>内容如下  </p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">icon</span>-bilibili</span><br></pre></td></tr></table></div></figure>
+
+<p>下面我们将之前社交链接的<code>bilibili</code>图标替换为咱们新设置的 </p>
+<figure class="highlight yaml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">bilibili:</span> <span class="string">https://bilibili.com/</span> <span class="string">||</span> <span class="string">iconfont</span> <span class="string">icon-bilibili</span></span><br></pre></td></tr></table></div></figure>
+
+<p>接下来 我门依旧按照传统渲染 查看效果！指令依旧为之前的指令 </p>
+<p><img src="/images/psg4/Snipaste_2022-02-19_19-22-03.png"></p>
+<p>如图所示 我们已经成功引入阿里的<code>iconfont</code>图标 </p>
+
+        <h4 id="2-4在设置友链页面！"   >
+          <a href="#2-4在设置友链页面！" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-4在设置友链页面！" class="headerlink" title="2.4在设置友链页面！"></a>2.4在设置友链页面！</h4>
+      <p>好的 下面我们正式开始友链的设置</p>
+<blockquote>
+<p>温馨提示 这又是一个较为困难的部分！！！</p>
+<p>本主题作者貌似也未提供 友链的样式 所以我们依旧采用一种 骚操作</p>
+<p>此处采用知乎作者<code>finisky</code>的<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/384472746" >最简单的Hexo友情链接页面定制</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>在<code>Markdown</code>引入Html语法 实现友链 详细内容请见原文链接 本处仅作简单使用的介绍！</p>
+</blockquote>
+<p>首先打开<code>/source/friendlink/index.md</code></p>
+<p>并在其中添加如下内容（以下内容为原作者内容</p>
+<figure class="highlight markdown"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 友情链接</span><br><span class="line"><span class="section">date: 2021-06-16 00:34:27</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;post-body&quot;</span>&gt;</span></span></span><br><span class="line">   <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;links&quot;</span>&gt;</span></span></span><br><span class="line"><span class="code">      &lt;style&gt;</span></span><br><span class="line"><span class="code">         .links-content&#123;</span></span><br><span class="line"><span class="code">         margin-top:1rem;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .link-navigation::after &#123;</span></span><br><span class="line"><span class="code">         content: &quot; &quot;;</span></span><br><span class="line"><span class="code">         display: block;</span></span><br><span class="line"><span class="code">         clear: both;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card &#123;</span></span><br><span class="line"><span class="code">         width: 45%;</span></span><br><span class="line"><span class="code">         font-size: 1rem;</span></span><br><span class="line"><span class="code">         padding: 10px 20px;</span></span><br><span class="line"><span class="code">         border-radius: 4px;</span></span><br><span class="line"><span class="code">         transition-duration: 0.15s;</span></span><br><span class="line"><span class="code">         margin-bottom: 1rem;</span></span><br><span class="line"><span class="code">         display:flex;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card:nth-child(odd) &#123;</span></span><br><span class="line"><span class="code">         float: left;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card:nth-child(even) &#123;</span></span><br><span class="line"><span class="code">         float: right;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card:hover &#123;</span></span><br><span class="line"><span class="code">         transform: scale(1.1);</span></span><br><span class="line"><span class="code">         box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card a &#123;</span></span><br><span class="line"><span class="code">         border:none;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card .ava &#123;</span></span><br><span class="line"><span class="code">         width: 3rem!important;</span></span><br><span class="line"><span class="code">         height: 3rem!important;</span></span><br><span class="line"><span class="code">         margin:0!important;</span></span><br><span class="line"><span class="code">         margin-right: 1em!important;</span></span><br><span class="line"><span class="code">         border-radius:4px;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card .card-header &#123;</span></span><br><span class="line"><span class="code">         font-style: italic;</span></span><br><span class="line"><span class="code">         overflow: hidden;</span></span><br><span class="line"><span class="code">         width: 100%;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card .card-header a &#123;</span></span><br><span class="line"><span class="code">         font-style: normal;</span></span><br><span class="line"><span class="code">         color: #2bbc8a;</span></span><br><span class="line"><span class="code">         font-weight: bold;</span></span><br><span class="line"><span class="code">         text-decoration: none;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card .card-header a:hover &#123;</span></span><br><span class="line"><span class="code">         color: #d480aa;</span></span><br><span class="line"><span class="code">         text-decoration: none;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card .card-header .info &#123;</span></span><br><span class="line"><span class="code">         font-style:normal;</span></span><br><span class="line"><span class="code">         color:#a3a3a3;</span></span><br><span class="line"><span class="code">         font-size:14px;</span></span><br><span class="line"><span class="code">         min-width: 0;</span></span><br><span class="line"><span class="code">         overflow: hidden;</span></span><br><span class="line"><span class="code">         white-space: nowrap;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">      &lt;/style&gt;</span></span><br><span class="line"><span class="code">      &lt;div class=&quot;links-content&quot;&gt;</span></span><br><span class="line"><span class="code">         &lt;div class=&quot;link-navigation&quot;&gt;</span></span><br><span class="line"><span class="code">            &lt;div class=&quot;card&quot;&gt;</span></span><br><span class="line"><span class="code">               &lt;img class=&quot;ava&quot; src=&quot;https://cdn.jsdelivr.net/gh/hvnobug/assets/common/avatar.png&quot; /&gt;</span></span><br><span class="line"><span class="code">               &lt;div class=&quot;card-header&quot;&gt;</span></span><br><span class="line"><span class="code">                  &lt;div&gt;</span></span><br><span class="line"><span class="code">                     &lt;a href=&quot;https://blog.hvnobug.com/&quot;&gt;Emil’s blog&lt;/a&gt;</span></span><br><span class="line"><span class="code">                  &lt;/div&gt;</span></span><br><span class="line"><span class="code">                  &lt;div class=&quot;info&quot;&gt;这是一个分享IT技术的小站。&lt;/div&gt;</span></span><br><span class="line"><span class="code">               &lt;/div&gt;</span></span><br><span class="line"><span class="code">            &lt;/div&gt;</span></span><br><span class="line"><span class="code">            &lt;div class=&quot;card&quot;&gt;</span></span><br><span class="line"><span class="code">               &lt;img class=&quot;ava&quot; src=&quot;https://yingwiki.top/avatar&quot; /&gt;</span></span><br><span class="line"><span class="code">               &lt;div class=&quot;card-header&quot;&gt;</span></span><br><span class="line"><span class="code">                  &lt;div&gt;</span></span><br><span class="line"><span class="code">                     &lt;a href=&quot;https://yingwiki.top&quot;&gt;越行勤&#x27;s Blog&lt;/a&gt;</span></span><br><span class="line"><span class="code">                  &lt;/div&gt;</span></span><br><span class="line"><span class="code">                  &lt;div class=&quot;info&quot;&gt;努力学习的小菜鸟&lt;/div&gt;</span></span><br><span class="line"><span class="code">               &lt;/div&gt;</span></span><br><span class="line"><span class="code">            &lt;/div&gt;</span></span><br><span class="line"><span class="code">         &lt;/div&gt;</span></span><br><span class="line"><span class="code">      &lt;/div&gt;</span></span><br><span class="line"><span class="code">   &lt;/div&gt;</span></span><br><span class="line"><span class="code">&lt;/div&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>由上面可知以后每增加一个友链 只要增加一个下面的代码段即可！</p>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">&quot;ava&quot;</span> <span class="attr">src</span>=<span class="string">&quot;&#123;avatarurl&#125;&quot;</span> /&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card-header&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;link&#125;&quot;</span>&gt;</span>&#123;name&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;info&quot;</span>&gt;</span>&#123;description&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<p>这个是上面变量对应的解释<br>|变量|介绍|<br>|—-|—|<br>|<code>&#123;avatarurl&#125;</code>|朋友站点的头像<code>url</code>地址|<br>|<code>&#123;link&#125;</code>|朋友站点的链接|<br>|<code>&#123;name&#125;</code>|朋友站点的名字|<br>|<code>&#123;description&#125;</code>|朋友站点的介绍|</p>
+<p>下面贴上我的配置</p>
+<figure class="highlight markdown"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: friendlink</span><br><span class="line"><span class="section">date: 2022-02-18 20:36:28</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="section"># 熙光鸽子的友情链接</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;post-body&quot;</span>&gt;</span></span></span><br><span class="line">   <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;links&quot;</span>&gt;</span></span></span><br><span class="line"><span class="code">      &lt;style&gt;</span></span><br><span class="line"><span class="code">         .links-content&#123;</span></span><br><span class="line"><span class="code">         margin-top:1rem;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .link-navigation::after &#123;</span></span><br><span class="line"><span class="code">         content: &quot; &quot;;</span></span><br><span class="line"><span class="code">         display: block;</span></span><br><span class="line"><span class="code">         clear: both;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card &#123;</span></span><br><span class="line"><span class="code">         width: 45%;</span></span><br><span class="line"><span class="code">         font-size: 1rem;</span></span><br><span class="line"><span class="code">         padding: 10px 20px;</span></span><br><span class="line"><span class="code">         border-radius: 4px;</span></span><br><span class="line"><span class="code">         transition-duration: 0.15s;</span></span><br><span class="line"><span class="code">         margin-bottom: 1rem;</span></span><br><span class="line"><span class="code">         display:flex;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card:nth-child(odd) &#123;</span></span><br><span class="line"><span class="code">         float: left;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card:nth-child(even) &#123;</span></span><br><span class="line"><span class="code">         float: right;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card:hover &#123;</span></span><br><span class="line"><span class="code">         transform: scale(1.1);</span></span><br><span class="line"><span class="code">         box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card a &#123;</span></span><br><span class="line"><span class="code">         border:none;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card .ava &#123;</span></span><br><span class="line"><span class="code">         width: 3rem!important;</span></span><br><span class="line"><span class="code">         height: 3rem!important;</span></span><br><span class="line"><span class="code">         margin:0!important;</span></span><br><span class="line"><span class="code">         margin-right: 1em!important;</span></span><br><span class="line"><span class="code">         border-radius:4px;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card .card-header &#123;</span></span><br><span class="line"><span class="code">         font-style: italic;</span></span><br><span class="line"><span class="code">         overflow: hidden;</span></span><br><span class="line"><span class="code">         width: 100%;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card .card-header a &#123;</span></span><br><span class="line"><span class="code">         font-style: normal;</span></span><br><span class="line"><span class="code">         color: #2bbc8a;</span></span><br><span class="line"><span class="code">         font-weight: bold;</span></span><br><span class="line"><span class="code">         text-decoration: none;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card .card-header a:hover &#123;</span></span><br><span class="line"><span class="code">         color: #d480aa;</span></span><br><span class="line"><span class="code">         text-decoration: none;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">         .card .card-header .info &#123;</span></span><br><span class="line"><span class="code">         font-style:normal;</span></span><br><span class="line"><span class="code">         color:#a3a3a3;</span></span><br><span class="line"><span class="code">         font-size:14px;</span></span><br><span class="line"><span class="code">         min-width: 0;</span></span><br><span class="line"><span class="code">         overflow: hidden;</span></span><br><span class="line"><span class="code">         white-space: nowrap;</span></span><br><span class="line"><span class="code">         &#125;</span></span><br><span class="line"><span class="code">      &lt;/style&gt;</span></span><br><span class="line"><span class="code">      &lt;div class=&quot;links-content&quot;&gt;</span></span><br><span class="line"><span class="code">         &lt;div class=&quot;link-navigation&quot;&gt;</span></span><br><span class="line"><span class="code">            &lt;div class=&quot;card&quot;&gt;</span></span><br><span class="line"><span class="code">               &lt;img class=&quot;ava&quot; src=&quot;http://www.zjhcofi.com/img/avatar.png&quot; /&gt;</span></span><br><span class="line"><span class="code">               &lt;div class=&quot;card-header&quot;&gt;</span></span><br><span class="line"><span class="code">                  &lt;div&gt;</span></span><br><span class="line"><span class="code">                     &lt;a href=&quot;http://www.zjhcofi.com/&quot;&gt;ZJHCOFI’s blog&lt;/a&gt;</span></span><br><span class="line"><span class="code">                  &lt;/div&gt;</span></span><br><span class="line"><span class="code">                  &lt;div class=&quot;info&quot;&gt;这是一个大佬的网站。&lt;/div&gt;</span></span><br><span class="line"><span class="code">               &lt;/div&gt;</span></span><br><span class="line"><span class="code">            &lt;/div&gt;</span></span><br><span class="line"><span class="code">            &lt;div class=&quot;card&quot;&gt;</span></span><br><span class="line"><span class="code">               &lt;img class=&quot;ava&quot; src=&quot;https://gravatar.loli.net/avatar/4cc893d113dd74ceca73f9863f2c5446&quot; /&gt;</span></span><br><span class="line"><span class="code">               &lt;div class=&quot;card-header&quot;&gt;</span></span><br><span class="line"><span class="code">                  &lt;div&gt;</span></span><br><span class="line"><span class="code">                     &lt;a href=&quot;https://unce.top&quot;&gt;云酱的小站&lt;/a&gt;</span></span><br><span class="line"><span class="code">                  &lt;/div&gt;</span></span><br><span class="line"><span class="code">                  &lt;div class=&quot;info&quot;&gt;超可爱的正太！&lt;/div&gt;</span></span><br><span class="line"><span class="code">               &lt;/div&gt;</span></span><br><span class="line"><span class="code">            &lt;/div&gt;</span></span><br><span class="line"><span class="code">            &lt;div class=&quot;card&quot;&gt;</span></span><br><span class="line"><span class="code">               &lt;img class=&quot;ava&quot; src=&quot;https://unica-nya.github.io/images/icons/unica-32x32.ico&quot; /&gt;</span></span><br><span class="line"><span class="code">               &lt;div class=&quot;card-header&quot;&gt;</span></span><br><span class="line"><span class="code">                  &lt;div&gt;</span></span><br><span class="line"><span class="code">                     &lt;a href=&quot;https://unica-nya.github.io/&quot;&gt;云酱的小窝&lt;/a&gt;</span></span><br><span class="line"><span class="code">                  &lt;/div&gt;</span></span><br><span class="line"><span class="code">                  &lt;div class=&quot;info&quot;&gt;还是辣个正太！&lt;/div&gt;</span></span><br><span class="line"><span class="code">               &lt;/div&gt;</span></span><br><span class="line"><span class="code">            &lt;/div&gt;</span></span><br><span class="line"><span class="code">         &lt;/div&gt;</span></span><br><span class="line"><span class="code">      &lt;/div&gt;</span></span><br><span class="line"><span class="code">   &lt;/div&gt;</span></span><br><span class="line"><span class="code">&lt;/div&gt;</span></span><br><span class="line"><span class="code"></span></span><br></pre></td></tr></table></div></figure>
+
+<p>按照惯例 依旧是 po出一张结果图 （指令与之前一致！</p>
+<p><img src="/images/psg4/Snipaste_2022-02-19_20-56-01.png"></p>
+
+        <h2 id="三、撰写发布新文章。"   >
+          <a href="#三、撰写发布新文章。" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、撰写发布新文章。" class="headerlink" title="三、撰写发布新文章。"></a>三、撰写发布新文章。</h2>
+      <blockquote>
+<p>对于此部分 熙熙不会说太多 推荐详读 官方的文档<br><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/writing" >官方文档</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>对于写作所需的<code>Markdown</code>语法熙熙则推荐这篇文章！<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.markdown.xyz/basic-syntax/" >Markdown 基本语法</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</blockquote>
+
+        <h3 id="1、新建文章"   >
+          <a href="#1、新建文章" class="heading-link"><i class="fas fa-link"></i></a><a href="#1、新建文章" class="headerlink" title="1、新建文章"></a>1、新建文章</h3>
+      <p>你可以执行下列命令来创建一篇新文章或者新的页面。(官方文档摘录！)</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></div></figure>
+<p>您可以在命令中指定文章的布局（<code>layout</code>），默认为<code> post</code>，可以通过修改 <code>_config</code>.yml 中的 <code>default_layout</code> 参数来指定默认布局。</p>
+<p>布局（Layout）<br><code>Hexo</code> 有三种默认布局：<code>post</code>、<code>page</code> 和 <code>draft</code>。在创建这三种不同类型的文件时，它们将会被保存到不同的路径；而您自定义的其他布局和 <code>post</code> 相同，都将储存到 <code>source/_posts</code> 文件夹。</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>布局</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>post</td>
+<td>source/_posts</td>
+</tr>
+<tr>
+<td>page</td>
+<td>source</td>
+</tr>
+<tr>
+<td>draft</td>
+<td>source/_drafts</td>
+</tr>
+</tbody></table></div>
+<p>同时也可以设置额外的参数</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-p, --path</code></td>
+<td>自定义新文章的路径</td>
+</tr>
+<tr>
+<td><code>-r, --replace</code></td>
+<td>如果存在同名文章，将其替换</td>
+</tr>
+<tr>
+<td><code>-s, --slug</code></td>
+<td>文章的 Slug，作为新文章的文件名和发布后的 URL</td>
+</tr>
+</tbody></table></div>
+<p>下面我们举一个实际的例子</p>
+<p>假设熙熙要写一篇文章叫做 在Ubuntu上安装Nginx 想要指定文档文件名发布后的路径为 <code>ubuntu-nginx</code> 布局为 <code>post</code></p>
+<p>则指令应该为</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post <span class="string">&quot;在Ubuntu上安装Nginx&quot;</span> -s ubuntu-nginx</span><br><span class="line"><span class="comment">#注意 因为layout的默认值为 post 所以可以精简为</span></span><br><span class="line">$ hexo new <span class="string">&quot;在Ubuntu上安装Nginx&quot;</span> -s ubuntu-nginx</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="2、撰写文章"   >
+          <a href="#2、撰写文章" class="heading-link"><i class="fas fa-link"></i></a><a href="#2、撰写文章" class="headerlink" title="2、撰写文章"></a>2、撰写文章</h3>
+      <p>撰写文章主要是打开原<code>Markdown</code>文件,并在文件中用Markdown语法撰写文章内容</p>
+<p>我们依旧延续上面的例子 打开<code>/source/_posts/ubuntu-nginx.md</code></p>
+
+        <h4 id="2-1-设置Front-Matter"   >
+          <a href="#2-1-设置Front-Matter" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-设置Front-Matter" class="headerlink" title="2.1 设置Front-Matter"></a>2.1 设置<code>Front-Matter</code></h4>
+      <p>打开文章的第一步便是设置该文章的 <code>Front-Matter</code></p>
+<p>打开后可以清晰的看见 <code>Hexo</code> 程序已经生成好了 一些必需的 <code>Front-Matter</code> </p>
+<blockquote>
+<p>强烈建议你 观看官方的文档 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/front-matter" >文章链接</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>同时也推荐您详细阅读<code>Stun</code>的文档，以获得该主题独有的<br>本文仅简单介绍常用的<code>Front-Matter</code> </p>
+</blockquote>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>功能</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>title</code></td>
+<td>标题</td>
+<td>该文章的标题 一般已经由<code>Hexo</code>自动填写好</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>建立时间</td>
+<td>该文章的创建时间 一般已经y由<code>Hexo</code>自动填写好</td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td>标签</td>
+<td>该文档包含那些标签</td>
+</tr>
+<tr>
+<td><code>categories</code></td>
+<td>分类</td>
+<td>该文章的分类（ps 若为多级分类 请务必参看官方文档！）</td>
+</tr>
+<tr>
+<td><code>toc</code></td>
+<td>是否开始目录</td>
+<td>是否开启文章目录 应填布尔值</td>
+</tr>
+<tr>
+<td><code>comments</code></td>
+<td>是否开启评论</td>
+<td>是否开始目录 同为布尔值</td>
+</tr>
+</tbody></table></div>
+<p>下面我们展示一下一个新建的文章的Markdown文件中的默认 <code>Front-Matter</code> </p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 在Ubuntu上安装Nginx</span><br><span class="line">date: 2022-02-20 13:32:25</span><br><span class="line">---</span><br></pre></td></tr></table></div></figure>
+<p>下面我们按照我的需求加上其他的<br>例如 分类为Web 标签为 Ubuntu Nginx 开启文章目录 不开启评论</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 在Ubuntu上安装Nginx</span><br><span class="line">date: 2022-02-20 13:32:25</span><br><span class="line">categories: </span><br><span class="line"> - Web</span><br><span class="line">tags: </span><br><span class="line"> - Ubuntu</span><br><span class="line"> - Nginx</span><br><span class="line">toc: true</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="2-2-文章正文的撰写"   >
+          <a href="#2-2-文章正文的撰写" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-文章正文的撰写" class="headerlink" title="2.2 文章正文的撰写"></a>2.2 文章正文的撰写</h4>
+      <p>正文的撰写 在 <code>Front-Matter</code>的下方 </p>
+<p>按照<code>Markdown</code>语法撰写即可 很简单 并不困难</p>
+<p>对于撰写的编辑器 我推荐一下两个 当然其他的可是可以的 </p>
+<p>第一个 当属地表最强编辑器 <code>VS Code</code> 配合一款叫做 <code>Markdown All in One</code>的插件即可</p>
+<p>第二个 则是 <code>Typora</code> ,一款国人开发的所见即所得的<code>Markdown</code>编辑器,不过有一个小小的缺点，此软件自从正式版开始是一款付费软件 价格为$14,99 三台电脑授权 ，对于手头宽松的可以考虑 ，不太富裕的还是推荐<code>VS Code</code>或者—&gt;（当然若您想体验一下的化 可以使用测试版 作者并未关闭测试版的下载及使用权 不过需要您自己在官网探索 本文并不会贴出地址~</p>
+<p>文章写完 保存完毕后在博客根目录下执行下面的指令便可生成本地静态文件 并运行测试服务器 </p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g &amp;&amp; hexo s </span><br></pre></td></tr></table></div></figure>
+
+<p>确认可以后 便可在博客根目录下使用如下命令部署到您的<code>Github Pages</code>（此处需要您在安装时 添加了您的SSH公钥至 <code>Github</code> 并且 正确按照本文配置！</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></div></figure>
+
+<p>完成后 您大概需要等待3min左右 便可访问网址观看您的成果</p>
+
+        <h3 id="3、删除文章"   >
+          <a href="#3、删除文章" class="heading-link"><i class="fas fa-link"></i></a><a href="#3、删除文章" class="headerlink" title="3、删除文章"></a>3、删除文章</h3>
+      <p>删除文章也很简单 您只需进入到文章的根目录 删除所需要删除的以.md结尾的源文件即可 </p>
+<p>删除后 执行下面的指令 重新生成本地文件并部署即可</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></div></figure>
+
+<p>若上面的不起作用 可以尝试下面的指令</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo s </span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="四、后记"   >
+          <a href="#四、后记" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、后记" class="headerlink" title="四、后记"></a>四、后记</h2>
+      <p>至此 本教程已经完全完毕！！</p>
+<p>若您想丰富您的技巧 以及使用能力 或者扩展您的博客 进一步美化您的博客 </p>
+<p>那么请仔细阅读 <code>Hexo</code>文档 以及主题使用文档 这些都是不可或缺的一环 </p>
+<p>祝您 在日后的使用<code>Hexo</code>的生活中，能愉快的记录您的每一次开心的瞬间，以及对新知识掌握喜悦</p>
+<blockquote>
+<p><strong>附文档链接</strong></p>
+<p><code>Hexo</code>文档: <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/" >点我！！！</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p><code>Stun</code>主题使用文档：<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://theme-stun.github.io/docs/zh-CN/" >点我~ ~ ~</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</blockquote>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://LJYXG.github.io">XG</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://ljyxg.github.io/2022/02/21/hexo-github-2/">https://ljyxg.github.io/2022/02/21/hexo-github-2/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://ljyxg.github.io/tags/Hexo/">Hexo</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://ljyxg.github.io/tags/Github/">Github</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://ljyxg.github.io/tags/Blog/">Blog</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2022/02/21/hexo-github-1/"><span class="paginator-prev__text">Hexo+Github Pages 实现个人博客的小白教程 ——上篇</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E5%8D%95%E7%9A%84%E7%AB%99%E7%82%B9%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">
+          一、简单的站点设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E7%AB%99%E7%82%B9%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.1.</span> <span class="toc-text">
+          1、站点的基本信息设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E7%AB%99%E7%82%B9%E7%9A%84%E9%83%A8%E7%BD%B2%E5%9C%B0%E5%9D%80%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.2.</span> <span class="toc-text">
+          2、站点的部署地址设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE%E4%B8%8E%E7%BE%8E%E5%8C%96%E3%80%82"><span class="toc-number">2.</span> <span class="toc-text">
+          二、主题设置与美化。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98"><span class="toc-number">2.1.</span> <span class="toc-text">
+          1、安装主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E7%BE%8E%E5%8C%96%E4%B8%BB%E9%A2%98"><span class="toc-number">2.2.</span> <span class="toc-text">
+          2、美化主题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1%E6%94%B9%E5%8A%A8%E7%AB%99%E7%82%B9%E5%9B%BE%E6%A0%87%E4%BB%A5%E5%8F%8A%E4%BD%9C%E8%80%85%E4%BF%A1%E6%81%AF%E6%9B%B4%E6%94%B9%EF%BC%81"><span class="toc-number">2.2.1.</span> <span class="toc-text">
+          2.1改动站点图标以及作者信息更改！</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-1%E7%AB%99%E7%82%B9%E5%9B%BE%E6%A0%87%E7%9A%84%E6%9B%B4%E6%94%B9"><span class="toc-number">2.2.1.1.</span> <span class="toc-text">
+          2.1.1站点图标的更改</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-2%E4%BD%9C%E8%80%85%E4%BF%A1%E6%81%AF%E6%9B%B4%E6%94%B9"><span class="toc-number">2.2.1.2.</span> <span class="toc-text">
+          2.1.2作者信息更改</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2%E6%94%B9%E5%8A%A8%E7%AB%99%E7%82%B9%E8%83%8C%E6%99%AF%E4%BB%A5%E5%8F%8A%E5%A2%9E%E6%B7%BB%E5%A4%9A%E4%B8%AA%E7%8B%AC%E7%AB%8B%E9%A1%B5%E9%9D%A2%EF%BC%81"><span class="toc-number">2.2.2.</span> <span class="toc-text">
+          2.2改动站点背景以及增添多个独立页面！</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3%E8%AE%BE%E7%BD%AE%E7%A4%BE%E4%BA%A4%E9%93%BE%E6%8E%A5%E5%B9%B6%E5%BC%95%E5%85%A5%E9%98%BF%E9%87%8C%E7%9A%84%E5%9B%BE%E6%A0%87%E5%BA%93%EF%BC%81"><span class="toc-number">2.2.3.</span> <span class="toc-text">
+          2.3设置社交链接并引入阿里的图标库！</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4%E5%9C%A8%E8%AE%BE%E7%BD%AE%E5%8F%8B%E9%93%BE%E9%A1%B5%E9%9D%A2%EF%BC%81"><span class="toc-number">2.2.4.</span> <span class="toc-text">
+          2.4在设置友链页面！</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%92%B0%E5%86%99%E5%8F%91%E5%B8%83%E6%96%B0%E6%96%87%E7%AB%A0%E3%80%82"><span class="toc-number">3.</span> <span class="toc-text">
+          三、撰写发布新文章。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0"><span class="toc-number">3.1.</span> <span class="toc-text">
+          1、新建文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E6%92%B0%E5%86%99%E6%96%87%E7%AB%A0"><span class="toc-number">3.2.</span> <span class="toc-text">
+          2、撰写文章</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E8%AE%BE%E7%BD%AEFront-Matter"><span class="toc-number">3.2.1.</span> <span class="toc-text">
+          2.1 设置Front-Matter</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E6%96%87%E7%AB%A0%E6%AD%A3%E6%96%87%E7%9A%84%E6%92%B0%E5%86%99"><span class="toc-number">3.2.2.</span> <span class="toc-text">
+          2.2 文章正文的撰写</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%88%A0%E9%99%A4%E6%96%87%E7%AB%A0"><span class="toc-number">3.3.</span> <span class="toc-text">
+          3、删除文章</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%90%8E%E8%AE%B0"><span class="toc-number">4.</span> <span class="toc-text">
+          四、后记</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">Being Towards Death</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/LJYXG/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/39784938" target="_blank" rel="noopener" data-popover="Bilibili" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="iconfont icon-bilibili-fill"></i></span></a><a class="sidebar-ov-social-item" href="https://segmentfault.com/u/xiguang_62086131c1185" target="_blank" rel="noopener" data-popover="思否" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="iconfont icon-sifou"></i></span></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>XG</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
