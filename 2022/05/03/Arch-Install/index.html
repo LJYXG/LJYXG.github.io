@@ -1,0 +1,547 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/logo.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/logo.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="ArchLinux安装教程(安装简记)       本文章是本鸽子安装Arch过程的简单记录，略微加工以作为简单的教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arch Linux安装教程(安装简记)">
+<meta property="og:url" content="https://ljyxg.github.io/2022/05/03/Arch-Install/index.html">
+<meta property="og:site_name" content="拾 · 间">
+<meta property="og:description" content="ArchLinux安装教程(安装简记)       本文章是本鸽子安装Arch过程的简单记录，略微加工以作为简单的教程">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/nord-wave.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-08_20-20-53.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-08_20-27-35.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-08_20-34-00.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_19-52-23.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_20-04-30.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_20-05-31.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_20-06-22.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_20-07-01.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_20-11-20.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_20-21-05.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_20-25-26.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_20-21-41.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_21-03-36.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_21-06-22.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_21-14-46.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_21-36-00.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_22-00-12.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_22-32-05.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_22-06-17.png">
+<meta property="og:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_22-10-20.png">
+<meta property="article:published_time" content="2022-05-03T00:54:00.000Z">
+<meta property="article:modified_time" content="2022-05-03T01:04:04.386Z">
+<meta property="article:author" content="XG">
+<meta property="article:tag" content="Arch">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontents.com/LJYXG/image-host/main/img/nord-wave.png"><title>Arch Linux安装教程(安装简记) | 拾 · 间</title><link ref="canonical" href="https://ljyxg.github.io/2022/05/03/Arch-Install/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-user"></i></span><span class="header-nav-menu-item__text">关于</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/friends/"><span class="header-nav-menu-item__icon"><i class="fas fa-users"></i></span><span class="header-nav-menu-item__text">友链</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-feather-alt"></i></span><span class="header-nav-menu-item__text">文章</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标签</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">拾 · 间</div><div class="header-banner-info__subtitle">一个鸽子的巢</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Arch Linux安装教程(安装简记)</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-05-03</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-05-03</span></span></div></header><div class="post-body">
+        <h1 id="ArchLinux安装教程-安装简记"   >
+          <a href="#ArchLinux安装教程-安装简记" class="heading-link"><i class="fas fa-link"></i></a><a href="#ArchLinux安装教程-安装简记" class="headerlink" title="ArchLinux安装教程(安装简记)"></a>ArchLinux安装教程(安装简记)</h1>
+      <p>本文章是本鸽子安装Arch过程的简单记录，略微加工以作为简单的教程</p>
+<span id="more"></span>
+
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/nord-wave.png"></p>
+<blockquote>
+<p>图片来源<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/pablocorbalann/arch-minimal-wallpapers" >Arch Linux minimal wallpapers</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</blockquote>
+<p><strong>写在前面</strong></p>
+<blockquote>
+<p>1、本文章是本鸽子安装Arch过程的简单记录，略微加工以作为简单的教程</p>
+<p>2、<strong>注意：这里安装说的是手动安装，Arch官方是有官方安装脚本的很好用！！！不过如果是双系统最好手动装，官方的脚本目前还是不能装在分区里面！！！</strong></p>
+<p>3、本文章可能不会很小白，如果您有安装并使用其他Linux发行版的经历则会更好</p>
+<p>4、作为Arch用户强烈建议你看完Arch Wiki官方的安装介绍（<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" >Installation Guide (简体中文)</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>）</p>
+<p>5、注意由于Arch采用滚动更新模式，所以最新版某些部分可能会与本教程写的时间不同，写作时间 2022年4月8日</p>
+<p>6、本教程大部分是截图自虚拟机（穷没法外录采集），实机大同小异</p>
+<p>7、本教程认为您有一定基础，很多细节内容鸽子不会细说，默认你是会的</p>
+<p>8、本文图床依旧是Github，不过用了镜像加速的国内Raw源（<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://raw.githubusercontents.com/" >链接</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>）</p>
+</blockquote>
+<p><strong>本文参考链接</strong></p>
+<ul>
+<li><p>Arch 官方Wiki的安装指导 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" >Installation Guide (简体中文)</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</li>
+<li><p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.chenrenhao.top/linux/archlinux%e5%ae%89%e8%a3%85.html" >ArchLinux安装</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</li>
+<li><p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138951848" >2021 Archlinux双系统安装教程（超详细）</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</li>
+</ul>
+<p><strong>本人电脑配置</strong></p>
+<ul>
+<li><p>Type: Dell Inspiron 5502</p>
+</li>
+<li><p>CPU: Intel Core i7-1165G7</p>
+</li>
+<li><p>内存：8Gx2</p>
+</li>
+<li><p>显卡：核显（Intel iRIS Xe）</p>
+</li>
+</ul>
+
+        <h2 id="安装前准备"   >
+          <a href="#安装前准备" class="heading-link"><i class="fas fa-link"></i></a><a href="#安装前准备" class="headerlink" title="安装前准备"></a>安装前准备</h2>
+      
+        <h3 id="一、准备网络环境"   >
+          <a href="#一、准备网络环境" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、准备网络环境" class="headerlink" title="一、准备网络环境"></a>一、准备网络环境</h3>
+      <p>如果你的电脑有线则可以忽略这一条 无线网络的话请确保你的网络名称为英文 否则后面联网时 因为无法显示和键入中文你会连不上网!!!!!</p>
+
+        <h3 id="二、下载ISO镜像文件"   >
+          <a href="#二、下载ISO镜像文件" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、下载ISO镜像文件" class="headerlink" title="二、下载ISO镜像文件"></a>二、下载ISO镜像文件</h3>
+      <p>推荐在国内的镜像源下载</p>
+<p>清华大学开源镜像站<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/" >链接</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>中国科技大学开源镜像<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://mirrors.ustc.edu.cn/archlinux/iso/" >链接</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>选择最新的镜像进入 并选择和你电脑对应的架构版本下载</p>
+<p>以我这次安装为例 我这时候的最新版本为<code>2022.04.05</code> </p>
+<p>进入后选择对应我的架构的 <code>archlinux-2022.04.05-x86_64.iso</code> 进行下载即可 </p>
+
+        <h3 id="三、准备引导盘"   >
+          <a href="#三、准备引导盘" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、准备引导盘" class="headerlink" title="三、准备引导盘"></a>三、准备引导盘</h3>
+      <p>本人时忠实的<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.ventoy.net/cn/index.html" >Ventoy</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>使用者 如果你也是 就很简单了 把Ios丢尽U盘就行</p>
+<p>其他用户 如果可以还是推荐尝试一下 <code>Ventoy</code> 不然的话就如下所说</p>
+<p>制作工具建议使用 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://rufus.ie/zh/" >Rufus</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>，写入方式为DD而非ISO，选项那选择GPT而非默认的MBR</p>
+
+        <h3 id="四、硬盘分区"   >
+          <a href="#四、硬盘分区" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、硬盘分区" class="headerlink" title="四、硬盘分区"></a>四、硬盘分区</h3>
+      <p>因为我是要弄双系统所以要提前分区 如果你是整块安装 可以忽略这一步</p>
+<p>分区用win自带的就可以</p>
+<p>快捷键 <code>Win + X</code> 然后选择磁盘管理器</p>
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-08_20-20-53.png"></p>
+<p>然后选择对应的分卷右键选择压缩卷即可 推荐大小至少30G 我就直接压缩30G了</p>
+<blockquote>
+<p>tips 这里所用的是MB 换算GB的需要乘1024 e.g.  30G = 1024 X 30 = 30720MB</p>
+</blockquote>
+<p>这个分区不需要分配 压缩出来就好</p>
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-08_20-27-35.png"></p>
+
+        <h3 id="五、BIOS的设置"   >
+          <a href="#五、BIOS的设置" class="heading-link"><i class="fas fa-link"></i></a><a href="#五、BIOS的设置" class="headerlink" title="五、BIOS的设置"></a>五、BIOS的设置</h3>
+      <blockquote>
+<p>tips 这下面所说的 进去 BIOS 设置 进到引导选择的嗯妞 需根据品牌而定！！！</p>
+</blockquote>
+<p>摁下开机键后狂按对应键进入BIOS设置 比如我的 Dell Inspiron 就是<code>F 2</code></p>
+<p>进去之后</p>
+<p>1.禁用<code>Secure Boot</code></p>
+<p>2.如果你的硬盘是NVMe的，把 从硬盘的启动方式 改成 <code>AHCI</code></p>
+<p>保存退出BIOS 然后重复上面</p>
+<p>摁下开机键后狂按对应键进入选择引导的页面 比如我的Dell Inspiron就是<code>F 12</code></p>
+<p>选择你的U盘的引导</p>
+
+        <h2 id="开始安装"   >
+          <a href="#开始安装" class="heading-link"><i class="fas fa-link"></i></a><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2>
+      
+        <h3 id="一、设置网络"   >
+          <a href="#一、设置网络" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、设置网络" class="headerlink" title="一、设置网络"></a>一、设置网络</h3>
+      <p>**tips:**如果你的电脑是有线连接网络 就可以跳过这一步了</p>
+<p>对于无线链接的网络需要使用 <code>iwctl</code> 进行联网</p>
+<p>输入一下指令</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iwctl</span><br></pre></td></tr></table></div></figure>
+
+<p>进入iwd模式，输入</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">device list</span><br></pre></td></tr></table></div></figure>
+
+<p>查看你的网卡名字，一般你一块网卡的话就是<code>wlan0</code>，输入</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 scan</span><br></pre></td></tr></table></div></figure>
+
+<p>用这块<code>wlan0</code>网卡检查扫描网络，输入</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 get-networks</span><br></pre></td></tr></table></div></figure>
+
+<p>查看扫描出来的网络名字，例如我这里的WIFI是 <code>Xiaomi_2735_5G</code></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 connect Xiaomi_2735_5G</span><br></pre></td></tr></table></div></figure>
+
+<p>接着输入密码，然后可以输入</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></div></figure>
+
+<p>退出<code>iwd</code>模式</p>
+<p>退出后可以<code>ping</code>一下百度测试网络联通</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping baidu.com</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="二、筛选镜像源，使用中国的镜像源"   >
+          <a href="#二、筛选镜像源，使用中国的镜像源" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、筛选镜像源，使用中国的镜像源" class="headerlink" title="二、筛选镜像源，使用中国的镜像源"></a>二、筛选镜像源，使用中国的镜像源</h3>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reflector -c China -a 6 --sort rate --save /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>我在试的时候会有一个镜像源提示超时，忽略就行</p>
+</blockquote>
+
+        <h3 id="三、硬盘分区"   >
+          <a href="#三、硬盘分区" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、硬盘分区" class="headerlink" title="三、硬盘分区"></a>三、硬盘分区</h3>
+      <p><strong>注意此处开始所有图片均来自虚拟机 不过实机大同小异！！</strong></p>
+<p>首先列出所有可用磁盘及分区</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsblk</span><br></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p><strong>tips</strong> 像是 <code>nvme0n1</code> 这样的事NVME的固态 而 <code>sda</code>  这样的是普通硬盘 </p>
+<p>借用一张知乎作者的图</p>
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-08_20-34-00.png"></p>
+</blockquote>
+<p>下面的图是我虚拟机中执行完所显示的结果</p>
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_19-52-23.png"></p>
+<p>首先我们要知道我们要准备那些分区 </p>
+<p>对于小白来说 我们要准备的分区主要有以下几个 </p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>分区</th>
+<th>用途</th>
+<th>大小</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>EFI分区</td>
+<td>用来引导系统（如果是双系统不用创建这个分区）</td>
+<td>至少300M</td>
+</tr>
+<tr>
+<td>SWAP</td>
+<td>Linux swap (交换空间)</td>
+<td>大于 512 MiB</td>
+</tr>
+<tr>
+<td>主分区</td>
+<td>用来放Linux的根目录</td>
+<td>剩余的所有空间</td>
+</tr>
+</tbody></table></div>
+<p>当你对Linux更加熟悉后 可以尝试增加更多的分区 例如 <code>/home</code> 不过对于最基本的教程来说都是可以忽略的</p>
+<p>下面开始正式分区 首先说我要什么分区以及他们的大小 </p>
+<p><code>EFI </code>300M（如果是双系统不用创建 用Win的就行）<code> SWAP</code> 1024M  </p>
+<p>剩余全部给根目录 </p>
+<p>分区所用指令如下 其中 <code>/dev/sda</code> 为上面 查看我们可用磁盘及分区中所显示的</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cfdisk /dev/sda</span><br></pre></td></tr></table></div></figure>
+
+<p>这个软件是一个半图形化的 很简单 我会贴创建EFI分区的 图  剩下的两个 不在赘述 大同小异</p>
+<p>进入软件后 首先选<code>gpt</code>分区</p>
+<p>我是虚拟机没用多余的分区 如果是实体机 记得选之前创建的 30G空白分区 </p>
+<p>然后按左右方向键 选择下方的 <code>New</code></p>
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_20-04-30.png"></p>
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_20-05-31.png"></p>
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_20-06-22.png"></p>
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_20-07-01.png"></p>
+<p>然后上下移动光标 选择 <code>Free Space</code> 继续创建剩下的分区  都创建并保存后 退出</p>
+<p>完全分好区的图片</p>
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_20-11-20.png"></p>
+
+        <h3 id="四、格式化分区"   >
+          <a href="#四、格式化分区" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、格式化分区" class="headerlink" title="四、格式化分区"></a>四、格式化分区</h3>
+      <p>我们要对我们新建的分区仅限格式化 </p>
+<p>上一步中我们供创建了三个分区  <code>sda1</code> EFI分区 <code>sda2</code> SWPA <code>sda3</code> 根分区</p>
+
+        <h4 id="1、EFI分区格式化"   >
+          <a href="#1、EFI分区格式化" class="heading-link"><i class="fas fa-link"></i></a><a href="#1、EFI分区格式化" class="headerlink" title="1、EFI分区格式化"></a>1、EFI分区格式化</h4>
+      <p>首先是我们的 EFI 分区 如果你是双系统 忽略EFI分区的格式化 因为你不用 !!!</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#指令中 efi_system_partition 为EFI分区名字 本教程中应为sda1</span></span><br><span class="line">mkfs.fat -F 32 /dev/efi_system_partitionsda1</span><br><span class="line"><span class="comment">#所以我应该用的指令是</span></span><br><span class="line">mkfs.fat -F 32 /dev/sda1</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_20-21-05.png"></p>
+
+        <h4 id="2、然后是初始化SWAP分区"   >
+          <a href="#2、然后是初始化SWAP分区" class="heading-link"><i class="fas fa-link"></i></a><a href="#2、然后是初始化SWAP分区" class="headerlink" title="2、然后是初始化SWAP分区"></a>2、然后是初始化SWAP分区</h4>
+      <p>指令如下所示</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#指令中 swap_partition 为交换空间分区名字 本教程中应为sda2</span></span><br><span class="line">mkswap /dev/swap_partition（交换空间分区）</span><br><span class="line"><span class="comment">#所以我应该用的指令是</span></span><br><span class="line">mkswap /dev/sda2</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_20-25-26.png"></p>
+
+        <h4 id="3、根分区格式化"   >
+          <a href="#3、根分区格式化" class="heading-link"><i class="fas fa-link"></i></a><a href="#3、根分区格式化" class="headerlink" title="3、根分区格式化"></a>3、根分区格式化</h4>
+      <p>最后是根分区 我用的文件格式为<code>ext4</code></p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#指令中 dev/root_partition 为分根分区名字 本教程中应为sda3</span></span><br><span class="line">mkfs.ext4 /dev/root_partition（根分区）</span><br><span class="line"><span class="comment">#所以我应该用的指令是</span></span><br><span class="line">mkfs.ext4 /dev/sda3</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_20-21-41.png"></p>
+
+        <h3 id="五、挂载分区"   >
+          <a href="#五、挂载分区" class="heading-link"><i class="fas fa-link"></i></a><a href="#五、挂载分区" class="headerlink" title="五、挂载分区"></a>五、挂载分区</h3>
+      <p>下面我贴出 Arch Wiki 安装指导的建议</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>挂载点</th>
+<th>分区</th>
+<th>分区类型</th>
+<th>建议大小</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/mnt/boot</td>
+<td>/dev/<em>efi_system_partition</em></td>
+<td>EFI 系统分区</td>
+<td>至少 300 MiB</td>
+</tr>
+<tr>
+<td>[SWAP]</td>
+<td>/dev/<em>swap_partition</em></td>
+<td>Linux swap (交换空间)</td>
+<td>大于 512 MiB</td>
+</tr>
+<tr>
+<td>/mnt</td>
+<td>/dev/<em>root_partition</em></td>
+<td>Linux x86-64 根目录 (/)</td>
+<td>剩余空间</td>
+</tr>
+</tbody></table></div>
+
+        <h4 id="1、挂载根分区"   >
+          <a href="#1、挂载根分区" class="heading-link"><i class="fas fa-link"></i></a><a href="#1、挂载根分区" class="headerlink" title="1、挂载根分区"></a>1、挂载根分区</h4>
+      <p>首先我们要挂载的就是根分区 根分区是sda3(我的是这个 你的需要按需更改！！！)</p>
+<p>所以执行如下指令</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda3 /mnt</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="2、挂载EFI分区"   >
+          <a href="#2、挂载EFI分区" class="heading-link"><i class="fas fa-link"></i></a><a href="#2、挂载EFI分区" class="headerlink" title="2、挂载EFI分区"></a>2、挂载EFI分区</h4>
+      <p>首先是创建对应的文件夹 </p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /mnt/boot</span><br></pre></td></tr></table></div></figure>
+
+<p>然后挂载EFI的引导分区 </p>
+<p>这里需要注意 如果你是双系统 请直接挂载你的win的EFI分区 </p>
+<p>我是虚拟机 所以直接挂载 我创建的sda1</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda1 /mnt/boot</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="3、启用SWAP分区"   >
+          <a href="#3、启用SWAP分区" class="heading-link"><i class="fas fa-link"></i></a><a href="#3、启用SWAP分区" class="headerlink" title="3、启用SWAP分区"></a>3、启用SWAP分区</h4>
+      <p>用指令启用我们前面分好的1024M的SWAP分区sda2</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon /dev/sda2</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="六、基本系统框架安装"   >
+          <a href="#六、基本系统框架安装" class="heading-link"><i class="fas fa-link"></i></a><a href="#六、基本系统框架安装" class="headerlink" title="六、基本系统框架安装"></a>六、基本系统框架安装</h3>
+      <p>在这一步我们需要安装基本的Arch Linux 框架 </p>
+<p>有 <code>base</code> 最基础的软件包 <code>Linux</code> Linux的内核 <code>linux-firmware</code> 常规硬件的固件 <code>vim</code> 文本编辑器 方便后面写入配置！</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacstrap /mnt base linux linux-firmware base-devel vim</span><br></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>linux的内核 可以选择其他的内核 可以看Arch的wiki <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Kernel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" >内核</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</blockquote>
+<p>然后等待下载并安装完成 </p>
+<p>完成后我们要生成fstab文件 目的是使 Linux 开机后自动挂载磁盘！</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br></pre></td></tr></table></div></figure>
+
+<p>执行完后最好看一下是否有内容 保险！！！</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /mnt/etc/fstab</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_21-03-36.png"></p>
+
+        <h3 id="七、正式配置新系统"   >
+          <a href="#七、正式配置新系统" class="heading-link"><i class="fas fa-link"></i></a><a href="#七、正式配置新系统" class="headerlink" title="七、正式配置新系统"></a>七、正式配置新系统</h3>
+      <p>首先切换到新系统环境中去 执行下面的指令进入到新系统 </p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="1-设置时区"   >
+          <a href="#1-设置时区" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-设置时区" class="headerlink" title="1.设置时区"></a>1.设置时区</h4>
+      <p>首先设置我们的时区为中国上海</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">timedatectl set-timezone Asia/Shanghai</span><br><span class="line"><span class="comment">#同步硬件时钟</span></span><br><span class="line">hwclock --systohc</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="2-设置locale"   >
+          <a href="#2-设置locale" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-设置locale" class="headerlink" title="2.设置locale"></a>2.设置locale</h4>
+      <p>首先使用vim编辑器打开 <code>/etc/locale.gen</code> 这个文件</p>
+<figure class="highlight vim"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vim</span> /etc/locale.gen</span><br></pre></td></tr></table></div></figure>
+
+<p>然后 按<code>/</code>,搜索en_US  解除UTF-8那一行前面的注释符<code>#</code></p>
+<p>再搜索zh_CN ,解除UTF-8那一行的注释一行前面的注释符<code>#</code></p>
+<p>然后输入<code>:wq</code>保存退出。</p>
+<blockquote>
+<p><strong>注意</strong> 此处不详细展开<code>Vim</code>的使用教学 您已经想要安装Arch了 那么基本的Vim使用能力 相信您一定有！</p>
+</blockquote>
+<p>之后我们需要生成 locale 执行下面的指令生成 locale</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locale-gen</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_21-06-22.png"></p>
+<p>然后执行下面的指令设置默认locale</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;LANG=en_US.UTF-8&#x27;</span> &gt;&gt; /etc/locale.conf</span><br></pre></td></tr></table></div></figure>
+<blockquote>
+<p><strong>注意</strong> 在安装汉语字体并进入桌面之前这里如果换成汉语,会因为没字体而都是方块</p>
+</blockquote>
+
+        <h4 id="3-创建hostname"   >
+          <a href="#3-创建hostname" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-创建hostname" class="headerlink" title="3.创建hostname"></a>3.创建hostname</h4>
+      <p>执行下面的指令设置电脑的 <code>hostname</code> 我的叫 <code>XG-Studio</code> 你可以把这个改成任何你想的</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;XG-Studio&#x27;</span> &gt;&gt; /etc/hostname</span><br></pre></td></tr></table></div></figure>
+
+
+
+        <h4 id="4-修改本地hosts"   >
+          <a href="#4-修改本地hosts" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-修改本地hosts" class="headerlink" title="4.修改本地hosts"></a>4.修改本地hosts</h4>
+      <p>打开文件 <code>etc/hosts</code></p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/hosts</span><br></pre></td></tr></table></div></figure>
+
+<p>并输入一下内容</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1   localhost</span><br><span class="line">::1           localhost</span><br><span class="line">127.0.1.1   XG-Studio.localdomain</span><br><span class="line"><span class="comment">#上面这个中的 XG-Studio 记得改成你的 hostname </span></span><br></pre></td></tr></table></div></figure>
+
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_21-14-46.png"></p>
+
+        <h4 id="5-用户密码设置"   >
+          <a href="#5-用户密码设置" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-用户密码设置" class="headerlink" title="5.用户密码设置"></a>5.用户密码设置</h4>
+      <p>首先为root用户设置密码 输入下面的指令</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></div></figure>
+
+<p>然后输入你的密码，他还会让你再输入一次以确认密码</p>
+<blockquote>
+<p>tips 密码不会回显 ！！！</p>
+</blockquote>
+<p>然后添加用户，如果不添加用户是无法在桌面启动器里面登录的！！！！</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">useradd -m -g users -s /bin/bash xg</span><br><span class="line"><span class="comment"># xg 是我的用户名 可以换成你的 </span></span><br></pre></td></tr></table></div></figure>
+
+<p>为新创建的用户 <code>xg</code> 创建密码</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd xg</span><br></pre></td></tr></table></div></figure>
+
+<p>然后输入你的密码，他还会让你再输入一次以确认密码</p>
+<p>还有很重要的一点 授予 <code>xg</code> 这个用户 <code>sudo</code> 权限</p>
+<p>使用下面的指令打开 <code>/etc/sudoers</code></p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sudoers</span><br></pre></td></tr></table></div></figure>
+
+<p>在最后加上 </p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xg ALL=(ALL) ALL</span><br><span class="line"># xg换成你的用户的名字！！</span><br></pre></td></tr></table></div></figure>
+
+<p>之后使用 <code>wq!</code> 保存退出</p>
+
+        <h4 id="6-安装一些基础的包"   >
+          <a href="#6-安装一些基础的包" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-安装一些基础的包" class="headerlink" title="6.安装一些基础的包"></a>6.安装一些基础的包</h4>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S grub efibootmgr networkmanager network-manager-applet dialog wireless_tools os-prober mtools dosfstools ntfs-3g linux-headers reflector git sudo</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>注意 : 上面的包务必安装（如果你不知道他们是干什么的话）并请再三检查是否有拼写错误</strong></p>
+<p>当然你也可顺便安装一些其他的包 例如<code>htop</code></p>
+<p>等待安装完成后  还要安装的对应处理器（CPU）的微码包</p>
+<p>如果你是Intel的cpu</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S intel-ucode</span><br></pre></td></tr></table></div></figure>
+
+<p>如果是amd</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S amd-ucode</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="7-配置安装引导程序"   >
+          <a href="#7-配置安装引导程序" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-配置安装引导程序" class="headerlink" title="7.配置安装引导程序"></a>7.配置安装引导程序</h4>
+      <p><code>Grub 2.06</code> 更新后 <code>os-prober</code> 用户需要手动干预 一下下</p>
+<p>我们需要打开<code>/etc/default/grub</code></p>
+<figure class="highlight vim"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vim</span> /etc/default/grub</span><br></pre></td></tr></table></div></figure>
+<p>取消最后一行 <code>GRUB_DISABLE_OS_PROBER=false</code> 前面的注释符号 <code>#</code></p>
+<p>如果没有的化 请添加至文件的最后一行</p>
+<p>最后记得保存退出</p>
+<p>下面正式开始配置安装引导程序</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grub-install --efi-directory=/boot --bootloader-id=Arch</span><br><span class="line"><span class="comment">#上面最后面 Arch 可以自己起</span></span><br></pre></td></tr></table></div></figure>
+
+<p>然后是生成<code>grub.cfg</code></p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_21-36-00.png"></p>
+
+        <h3 id="八、安装桌面环境（KDE）"   >
+          <a href="#八、安装桌面环境（KDE）" class="heading-link"><i class="fas fa-link"></i></a><a href="#八、安装桌面环境（KDE）" class="headerlink" title="八、安装桌面环境（KDE）"></a>八、安装桌面环境（KDE）</h3>
+      <p>我是很喜欢的 KDE 的 所以这里以kde为例 其他的就需要你去翻找别的教程了！</p>
+<blockquote>
+<p>这之前需要安装显卡驱动的 不过我是 Intel 的核显 属于即装即用的类型所以我就不需要装其他的驱动</p>
+<p>如果是AMD集显/独显 NVDIA的独显 是需要的 具体的可以百度也可查看Arch Wiki</p>
+</blockquote>
+<p>首先安安装 <code>Display Server</code> 采用的是开源世界最为流行的 <code>xorg</code></p>
+<p>安装指令如下</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S xorg</span><br></pre></td></tr></table></div></figure>
+
+<p>再然后安装 <code>Display Manager</code> 我用 <code>KDE</code> 所以装 <code>sddm</code></p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pacman -S sddm</span><br><span class="line"><span class="comment">#并设置开机自动启动</span></span><br><span class="line">systemctl <span class="built_in">enable</span> sddm</span><br></pre></td></tr></table></div></figure>
+
+<p>最后安装安装<code>Desktop Environment</code>  我用KDE 所以执行如下的指令</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S plasma kde-applications packagekit-qt5</span><br></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>tpis <code>kde-applications</code> 是一些kde桌面的基础软件包 你也可以只装一个终端 <code>konsole</code> 后面装好 <code>yay </code>后舒服的安装各种AUR源中的软件！</p>
+</blockquote>
+
+        <h3 id="九、其他配置"   >
+          <a href="#九、其他配置" class="heading-link"><i class="fas fa-link"></i></a><a href="#九、其他配置" class="headerlink" title="九、其他配置"></a>九、其他配置</h3>
+      <p>添加 <code>archlinuxcn </code>  源 这里面有一些官方有但是没编译的软件 例如 yay 这个源里就有编译好的 也有一些国内没开源但是有Linux版本的软件 例如 WPS</p>
+<p>使用vim打开<code>/etc/pacman.conf</code></p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/pacman.conf</span><br></pre></td></tr></table></div></figure>
+
+<p>在最后加上下面两行（我这里使用了北外的镜像站）</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">Server = https://mirrors.bfsu.edu.cn/archlinuxcn/$arch</span><br><span class="line">#上面的源是北京外国语大学的镜像 也可以用其他镜像！</span><br></pre></td></tr></table></div></figure>
+
+<p>ps 也要同时取消对multilib源的注释</p>
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_22-00-12.png"></p>
+<p>保存退出之后 需要同步并安装 <code>archlinuxcn-keyring</code></p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Syu &amp;&amp; pacman -S archlinuxcn-keyring</span><br></pre></td></tr></table></div></figure>
+
+<p>然后安装中文的字体，如果这一步不装进去图形界面之后还是要装的</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -S ttf-sarasa-gothic noto-fonts-cjk</span><br><span class="line"><span class="comment">#这里安装的是更纱黑体和noto cjk</span></span><br></pre></td></tr></table></div></figure>
+
+<p>上面的安装好后 配置一个开机启动项 <code>NetworkManager</code> 开机后方便网络链接！</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> NetworkManager</span><br></pre></td></tr></table></div></figure>
+
+<p>最后退出新系统 可以使用指令 <code>exit</code> 可以使用 <code>Ctrl + D</code></p>
+<p>然后键入下面的指令重启</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="进入新系统"   >
+          <a href="#进入新系统" class="heading-link"><i class="fas fa-link"></i></a><a href="#进入新系统" class="headerlink" title="进入新系统"></a>进入新系统</h2>
+      <p>在上面的重启完成就就可以看到Grub引导的选择了 </p>
+<p>选择我们设置的第一个Arch 就可以进入了系统了</p>
+<p>如下图</p>
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_22-32-05.png"></p>
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_22-06-17.png"></p>
+<p>我们输入用户的密码（<code>xg</code>就是我的用户名）就可以进入系统了 </p>
+<blockquote>
+<p>提示 这个时候小键盘是未启用的 需要开一下哦 一般来说 Linux开机默认都不是开的 你可以去学习如何开启</p>
+</blockquote>
+<p><img src="https://raw.githubusercontents.com/LJYXG/image-host/main/img/Snipaste_2022-04-09_22-10-20.png"></p>
+<p>至此Arch Linux的安装就完整结束了  </p>
+<p>后面你可以在设置中把语言改为 汉语</p>
+<p>也可以安装 <code>yay</code> 体验 Arch Aur 爽感</p>
+<p>至于汉语输入法 墙裂推荐知乎这篇文章！</p>
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/393746270" >Arch Linux - 中文输入法</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>最终至此 本文已经完全结束了 </p>
+<p>不过还是有一点需要提示 <strong>记得一周至少更新一下系统（pacman -Syyu）不然长时间不更新 然后突然一更新容易滚挂！！！！</strong></p>
+<p>最后祝你能愉快的使用 Arch !!!!!</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://LJYXG.github.io">XG</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://ljyxg.github.io/2022/05/03/Arch-Install/">https://ljyxg.github.io/2022/05/03/Arch-Install/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://ljyxg.github.io/tags/Arch/">Arch</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://ljyxg.github.io/tags/Linux/">Linux</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/05/03/Latex/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">LateX 数学语法表分享</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/02/21/hexo-github-2/"><span class="paginator-prev__text">Hexo+Github Pages 实现个人博客的小白教程 ——下篇</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ArchLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B-%E5%AE%89%E8%A3%85%E7%AE%80%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">
+          ArchLinux安装教程(安装简记)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%89%8D%E5%87%86%E5%A4%87"><span class="toc-number">1.1.</span> <span class="toc-text">
+          安装前准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%87%86%E5%A4%87%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83"><span class="toc-number">1.1.1.</span> <span class="toc-text">
+          一、准备网络环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%8B%E8%BD%BDISO%E9%95%9C%E5%83%8F%E6%96%87%E4%BB%B6"><span class="toc-number">1.1.2.</span> <span class="toc-text">
+          二、下载ISO镜像文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%87%86%E5%A4%87%E5%BC%95%E5%AF%BC%E7%9B%98"><span class="toc-number">1.1.3.</span> <span class="toc-text">
+          三、准备引导盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA"><span class="toc-number">1.1.4.</span> <span class="toc-text">
+          四、硬盘分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81BIOS%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.1.5.</span> <span class="toc-text">
+          五、BIOS的设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.</span> <span class="toc-text">
+          开始安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AE%BE%E7%BD%AE%E7%BD%91%E7%BB%9C"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          一、设置网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%AD%9B%E9%80%89%E9%95%9C%E5%83%8F%E6%BA%90%EF%BC%8C%E4%BD%BF%E7%94%A8%E4%B8%AD%E5%9B%BD%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+          二、筛选镜像源，使用中国的镜像源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA"><span class="toc-number">1.2.3.</span> <span class="toc-text">
+          三、硬盘分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%88%86%E5%8C%BA"><span class="toc-number">1.2.4.</span> <span class="toc-text">
+          四、格式化分区</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81EFI%E5%88%86%E5%8C%BA%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">
+          1、EFI分区格式化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E7%84%B6%E5%90%8E%E6%98%AF%E5%88%9D%E5%A7%8B%E5%8C%96SWAP%E5%88%86%E5%8C%BA"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">
+          2、然后是初始化SWAP分区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E6%A0%B9%E5%88%86%E5%8C%BA%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="toc-number">1.2.4.3.</span> <span class="toc-text">
+          3、根分区格式化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA"><span class="toc-number">1.2.5.</span> <span class="toc-text">
+          五、挂载分区</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E6%8C%82%E8%BD%BD%E6%A0%B9%E5%88%86%E5%8C%BA"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">
+          1、挂载根分区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E6%8C%82%E8%BD%BDEFI%E5%88%86%E5%8C%BA"><span class="toc-number">1.2.5.2.</span> <span class="toc-text">
+          2、挂载EFI分区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E5%90%AF%E7%94%A8SWAP%E5%88%86%E5%8C%BA"><span class="toc-number">1.2.5.3.</span> <span class="toc-text">
+          3、启用SWAP分区</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%9F%BA%E6%9C%AC%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.6.</span> <span class="toc-text">
+          六、基本系统框架安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E6%AD%A3%E5%BC%8F%E9%85%8D%E7%BD%AE%E6%96%B0%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.7.</span> <span class="toc-text">
+          七、正式配置新系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%AE%BE%E7%BD%AE%E6%97%B6%E5%8C%BA"><span class="toc-number">1.2.7.1.</span> <span class="toc-text">
+          1.设置时区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%AE%BE%E7%BD%AElocale"><span class="toc-number">1.2.7.2.</span> <span class="toc-text">
+          2.设置locale</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%88%9B%E5%BB%BAhostname"><span class="toc-number">1.2.7.3.</span> <span class="toc-text">
+          3.创建hostname</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E4%BF%AE%E6%94%B9%E6%9C%AC%E5%9C%B0hosts"><span class="toc-number">1.2.7.4.</span> <span class="toc-text">
+          4.修改本地hosts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.2.7.5.</span> <span class="toc-text">
+          5.用户密码设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E5%AE%89%E8%A3%85%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9A%84%E5%8C%85"><span class="toc-number">1.2.7.6.</span> <span class="toc-text">
+          6.安装一些基础的包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85%E5%BC%95%E5%AF%BC%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.2.7.7.</span> <span class="toc-text">
+          7.配置安装引导程序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E5%AE%89%E8%A3%85%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83%EF%BC%88KDE%EF%BC%89"><span class="toc-number">1.2.8.</span> <span class="toc-text">
+          八、安装桌面环境（KDE）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.9.</span> <span class="toc-text">
+          九、其他配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E6%96%B0%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.3.</span> <span class="toc-text">
+          进入新系统</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">Being Towards Death</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/LJYXG/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/39784938" target="_blank" rel="noopener" data-popover="Bilibili" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="iconfont icon-bilibili-fill"></i></span></a><a class="sidebar-ov-social-item" href="https://segmentfault.com/u/xiguang_62086131c1185" target="_blank" rel="noopener" data-popover="思否" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="iconfont icon-sifou"></i></span></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>XG</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
