@@ -1,5 +1,5 @@
 ---
-title: Debian安装Apache简单记录
+title: ArchLinux安装教程(安装简记)
 date: 2022-05-03 08:41:00
 tags: 
  - Arch
@@ -7,6 +7,8 @@ tags:
 ---
 
 # ArchLinux安装教程(安装简记)
+
+本文章是本鸽子安装Arch过程的简单记录，略微加工以作为简单的教程
 
 
 <!-- more -->
