@@ -4,7 +4,7 @@ name: Hexo Deploy
 on:
   push:
     branches:
-      - main
+      - main/source/*
     paths-ignore: # 下列文件的变更不触发部署，可以自行添加
       - README.md
       - LICENSE
@@ -16,27 +16,27 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       #初始化 Node.js 环境
-      - name: Setup Node.js environment
+      - name: Setup Node.js Environment
         uses: actions/setup-node@v3
         with:
           node-version: 16
 
       # 拉取代码
-      - name: Checkout
+      - name: Checkout Main Files
         uses: actions/checkout@v3
         with:
           ref: main
 
       # 拉取主题代码
-      - name: Checkout Themes qwq
+      - name: Checkout Themes 
         uses: actions/checkout@v3
         with:
-          repository: liuyib/hexo-theme-stun
-          ref: master
+          repository: /LJYXG/LJYXG.github.io
+          ref: themes
           path: themes/stun
       
-      # 建立编译环境
-      - name: npm install
+      # 建立 Hexo 环境
+      - name: npm install hexo
         run: |
           npm install hexo-cli -g
           npm install hexo-deployer-git --save
@@ -44,8 +44,8 @@ jobs:
         env:
           CI: true
       
-      # 编译
-      - name: hexo build
+      # 生成
+      - name: Hexo Build
         run: |
           hexo clean
           hexo g
@@ -56,5 +56,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: test
+          BRANCH: gh-pages
           FOLDER: ./public
