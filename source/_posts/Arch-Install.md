@@ -1,6 +1,6 @@
 ---
-title: ArchLinux安装教程(安装简记)
-date: 2022-05-03 08:41:00
+title: Arch Linux安装教程(安装简记)
+date: 2022-05-03 08:54:00
 tags: 
  - Arch
  - Linux
