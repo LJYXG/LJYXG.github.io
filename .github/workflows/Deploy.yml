@@ -34,7 +34,7 @@ jobs:
       - name: Checkout Themes 
         uses: actions/checkout@v3
         with:
-          repository: /LJYXG/LJYXG.github.io
+          repository: LJYXG/LJYXG.github.io
           ref: themes
           path: themes/stun
       
